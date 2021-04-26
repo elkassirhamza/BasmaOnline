@@ -4,6 +4,8 @@ package com.example.produit.controller;
 import com.example.produit.entities.Produit;
 import com.example.produit.services.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,4 +46,10 @@ public class ProduitController {
         return produit;
     }
 
+
+    @GetMapping(value="/recherche/{recherhce}")
+    public ResponseEntity<List<Produit>> findProductByName(@PathVariable String recherhce) {
+        List<Produit> product5 = produitService.getProduit(recherhce);
+        return new ResponseEntity<List<Produit>>(product5, HttpStatus.OK);
+    }
 }

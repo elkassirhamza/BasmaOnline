@@ -44,7 +44,12 @@ public class ProduitService {
         produitRepository.save(produit);
     }
 
+           public List<Produit> getProduit(String recherche) {
+               // TODO Auto-generated method stub
+               List<Produit> produit = produitRepository.findByNameLike("%" + recherche + "%");
+               if (produit == null)
+                   System.out.println("Product Not Found!");
+               return produit;
 
-
-
+           }
 }
