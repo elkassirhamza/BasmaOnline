@@ -20,8 +20,13 @@ public class Produit implements Serializable {
     private int qantite;
 
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Category category;
+
     public Produit() {
     }
+
 
     public Produit(String name, String description, double prix, String image, int qantite) {
         this.name = name;
@@ -94,5 +99,13 @@ public class Produit implements Serializable {
 
     public void setQantite(int qantite) {
         this.qantite = qantite;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

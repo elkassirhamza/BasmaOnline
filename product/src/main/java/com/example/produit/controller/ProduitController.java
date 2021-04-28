@@ -1,6 +1,7 @@
 package com.example.produit.controller;
 
 
+import com.example.produit.entities.Category;
 import com.example.produit.entities.Produit;
 import com.example.produit.services.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class ProduitController {
 
     @Autowired
     ProduitService produitService;
+
+    Category category;
 
     @PostMapping("/produits")
     private Long saveproduit(@RequestBody Produit produits) {
