@@ -1,8 +1,11 @@
 package com.example.categories.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "categories")
@@ -15,9 +18,9 @@ public class Category implements Serializable{
 	@Column(name="category_name")
 	private String name;
 
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "category",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Produit> product;
+    private Set<Produit> product;
 
 	public Category() {
 	}
@@ -43,11 +46,11 @@ public class Category implements Serializable{
 		this.name = name;
 	}
 
-	public List<Produit> getProduct() {
+	public Set<Produit> getProduct() {
 		return product;
 	}
 
-	public void setProduct(List<Produit> product) {
+	public void setProduct(Set<Produit> product) {
 		this.product = product;
 	}
 }
