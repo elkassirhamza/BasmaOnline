@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.container {
+  margin-top: 10%;
+}
+
+.fa {
+  font-size: 12px;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+.card-body {
+  background-color: antiquewhite;
+}
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+}
+
+.border {
+  padding: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+#addProd {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.fa-search .fa-edit .fa-remove {
+  font-size: 5px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.colimg {
+  width: 40px;
+}
